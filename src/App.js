@@ -15,7 +15,7 @@ function App() {
       const res = await axios.post('https://ryiyef9o3h.execute-api.ap-northeast-1.amazonaws.com/prod/recommend', {
         message: input
       });
-      setMessages([...newMessages, { role: "bot", text: res.data.body }]);
+      setMessages([...newMessages, { role: "bot", text: res.data }]);
     } catch (err) {
       setMessages([...newMessages, { role: "bot", text: "エラーが発生しました。" }]);
     }
