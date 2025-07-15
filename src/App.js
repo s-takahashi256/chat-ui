@@ -16,7 +16,7 @@ function App() {
         message: input
       });
       const str = "以下のお店はいかがですか？条件に合致したお店です。" + "\n"
-　　　for (var i; i < res.data.length; i++) {
+　　　for (var i=0; i < res.data.length; i++) {
 	str = str + String(i+1);
 	str = str + " " + res.data[i].name + ":" ;
 	str = str + " " + res.data[i].feature  + "" ;
