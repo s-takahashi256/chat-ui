@@ -15,6 +15,14 @@ function App() {
       const res = await axios.post('https://ryiyef9o3h.execute-api.ap-northeast-1.amazonaws.com/prod/recommend', {
         message: input
       });
+　　　for (lat i in res.data) {
+	const str = "以下のお店はいかがですか？条件に合致したお店です。" + "\n"
+	str = str + String(i+1);
+	str = str + " " + res.data[i].name + ":" ;
+	str = str + " " + res.data[i].feature  + "" ;
+	str = str + " " + res.data[i].url  + "\n" ;
+	res.data.body = res.data.body + str;
+      }
       setMessages([...newMessages, { role: "bot", text: res.data.body }]);
     } catch (err) {
       setMessages([...newMessages, { role: "bot", text: "エラーが発生しました。" }]);
