@@ -15,8 +15,8 @@ function App() {
       const res = await axios.post('https://ryiyef9o3h.execute-api.ap-northeast-1.amazonaws.com/prod/recommend', {
         message: input
       });
-      const str = "以下のお店はいかがですか？条件に合致したお店です。" + "\n"
-　　　for (var i=0; i < res.data.length; i++) {
+      let str = "以下のお店はいかがですか？条件に合致したお店です。" + "\n"
+　　　for (let i=0; i < res.data.length; i++) {
 	str = str + String(i+1);
 	str = str + " " + res.data[i].name + ":" ;
 	str = str + " " + res.data[i].feature  + "" ;
