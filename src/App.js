@@ -12,7 +12,7 @@ function App() {
     setInput("");
 
     try {
-      const res = await axios.post('https:ryiyef9o3h.execute-api.ap-northeast-1.amazonaws.com/prod/recommend', {
+      const res = await axios.post('https://ryiyef9o3h.execute-api.ap-northeast-1.amazonaws.com/prod/recommend', {
         message: input
       });
       setMessages([...newMessages, { role: "bot", text: res.data.body }]);
