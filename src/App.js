@@ -16,11 +16,11 @@ function App() {
         message: input
       });
       let str = "以下のお店はいかがですか？条件に合致したお店です。" + "\r\n"
-　　　for (let i=0; i < res.data.length; i++) {
-	str = str + String(i+1);
-	str = str + " " + res.data[i].name + ":" ;
-	str = str + " " + res.data[i].feature  + "" ;
-	str = str + " " + res.data[i].url  + "\r\n" ;
+      for (let i=0; i < res.data.length; i++) {
+        str = str + String(i+1);
+        str = str + " " + res.data[i].name + ":" ;
+        str = str + " " + res.data[i].feature  + "" ;
+        str = str + " " + res.data[i].url  + "\r\n" ;
       }
       setMessages([...newMessages, { role: "bot", text: str }]);
     } catch (err) {
@@ -31,7 +31,7 @@ function App() {
   return (
     <div style={{ padding: 20 }}>
       <h2>おもてなしプランナーチャット</h2>
-      <div style={{ minHeight: 300, border: '1px solid gray', padding: 10 }}>
+      <div style={{ minHeight: 300, border: '1px solid gray', padding: 10, whiteSpace: 'pre-wrap' }}>
         {messages.map((m, i) => (
           <div key={i} style={{ margin: 5 }}>
             <strong>{m.role === "user" ? "あなた" : (m.role === "system" ? "システム" : "プランナー")}:</strong> {m.text}
