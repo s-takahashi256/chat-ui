@@ -39,7 +39,7 @@ function App() {
       });
       let str = "以下のお店はいかがですか？条件に合致したお店です。" + "\r\n"
       res.data.forEach((item, index) => {
-        str += `${index + 1}. ${item.name}: \n ${item.feature}\n ${item.url}\n`;
+        str += `${index + 1}. ${item.name}: \n ${item.feature}\n ${item.url}\n `;
         // str = str + String(i+1);
         // str = str + " " + res.data[i].name + ":" ;
         // str = str + " " + res.data[i].feature  + "" ;
